@@ -12,8 +12,7 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <div className={styles.hero}>
           <div className={styles.hero_text}>
-            <h1>All Games</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni vitae itaque autem neque dolor ut repellendus debitis explicabo quidem aspernatur voluptatum, id recusandae magnam excepturi facere esse ad inventore in.</p>
+            <h1 className={styles.h1}>Game Over</h1>
           </div>
         </div>
       </main>

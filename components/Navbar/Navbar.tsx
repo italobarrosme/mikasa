@@ -11,15 +11,16 @@ const pages = [
     icon: 'home'
   },
   {
+    name: 'Game List',
+    href: '/games',
+    icon: 'gamepad'
+  },
+  {
     name: 'About',
     href: '/about',
     icon: 'info'
-  },
-  {
-    name: 'Games',
-    href: '/games',
-    icon: 'gamepad'
   }
+  
 ]
 
 

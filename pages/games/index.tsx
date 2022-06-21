@@ -6,7 +6,8 @@ import Card from './../../components/Card'
 
 export const getStaticProps = async () => {
   
-  const response = await fetch('https://api.rawg.io/api/games?key=69002ae81c6b49eab730ac819760dcc5&page=1')
+  const ramdomNumber = Math.floor(Math.random() * 10)
+  const response = await fetch(`https://api.rawg.io/api/games?key=69002ae81c6b49eab730ac819760dcc5&page=${ramdomNumber}`)
   const data = await response.json()
 
   return {
@@ -23,19 +24,21 @@ const Games: NextPage = ({ games }: any) => {
       <Head>
         <title>Game Over | Game list</title>
       </Head>
-      <h1 className={styles.h1}>All Games</h1>
+      <main className={styles.main}>
+        <h1 className={styles.h1}>List Games</h1>
 
-      <ul className={styles.ul}>
-        {games.map((game: any) => (
-          <li key={game.id} className={styles.li}>
-            <Link href={'/games/' + game.name}>
-              <a className={styles.a}>
-                <Card title={game.name} image={game.background_image}/>
-              </a>
-            </Link>
-          </li>
-        ))}
-      </ul>
+        <ul className={styles.ul}>
+          {games.map((game: any) => (
+            <li key={game.id} className={styles.li}>
+              <Link href={'/games/' + game.name}>
+                <a className={styles.a}>
+                  <Card title={game.name} image={game.background_image}/>
+                </a>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </main>
     </>
   )
 }

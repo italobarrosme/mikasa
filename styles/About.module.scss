@@ -1,3 +1,11 @@
+.main {
+  padding: 42px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .h1 {
   font-size: 42px;
   padding-bottom: 42px;
@@ -10,4 +18,9 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
+  padding: 20px;
+
+  &:hover {
+    color: #69C4DA;
+  }
 }

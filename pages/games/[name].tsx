@@ -1,4 +1,5 @@
 import type { GetStaticPaths } from 'next'
+import styles from './../../styles/Games.module.scss'
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [],
@@ -24,18 +25,27 @@ export const getStaticProps = async (context: any) => {
   }
 }
 const Details = ({game, data}:any) => {
-
-  console.log(game, 'GAME')
+ 
+  let dataFormatada = new Date(data).toLocaleDateString('pt-BR');
 
   return (
     <>
-      <h1>Details</h1>
-      <p>{ game.name }</p>
+        <main className={styles.main__details}>
+        <div className={styles.left__content}>
+          <img src={game.background_image} alt={game.name} />
+          <h2>{game.name}</h2>
 
-      <img src={game.background_image} alt={game.name} />
+          <p> {dataFormatada} </p>
 
-      <p>{ game.rating }</p>
-      <p>{ data }</p>
+          <p>{ game.rating }</p>
+
+        </div>
+        <div className={styles.right__content}>
+          <h2>Description</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat iure sint maxime facilis adipisci impedit dolorem odio 
+            temporibus, sunt commodi veritatis dicta, dignissimos minima possimus cupiditate dolor aperiam velit molestiae!</p>
+        </div>
+      </main>
 
     </>
   );

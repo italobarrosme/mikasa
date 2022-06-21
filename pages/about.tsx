@@ -10,14 +10,16 @@ const About: NextPage = () => {
       <Head>
         <title>Game Over | About</title>
       </Head>
-      <h1 className={styles.h1}>About</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        Magni vitae itaque autem neque dolor ut repellendus debitis explicabo quidem aspernatur voluptatum, 
-        id recusandae magnam excepturi facere esse ad inventore in.</p>
+      <main className={styles.main}>
+        <h1 className={styles.h1}>About</h1>
+        <p>
+          This site is used to catalog the games I've finished I've been doing this for 10 years, PC games are a hobby I have, 90% of the games played on the PC platform are zeroed games in campaign mode most of them in normal or hard mode.
+        </p>
 
-      <Link href="/">
-        <a className={styles.a}><Icon icon={'bi:arrow-left-circle'} />Back to Home </a>
-      </Link>
+        <Link href="/">
+          <a className={styles.a}><Icon icon={'bi:arrow-left-circle'} />Back to Home </a>
+        </Link>
+      </main>
     </>
   );
 }

@@ -1,5 +1,6 @@
 import type { GetStaticPaths } from 'next'
 import styles from './../../styles/Games.module.scss'
+
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [],

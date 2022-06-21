@@ -13,7 +13,7 @@ const About: NextPage = () => {
       <main className={styles.main}>
         <h1 className={styles.h1}>About</h1>
         <p>
-          This site is used to catalog the games I've finished I've been doing this for 10 years, PC games are a hobby I have, 90% of the games played on the PC platform are zeroed games in campaign mode most of them in normal or hard mode.
+        This site is used to catalog the games Ive finished Ive been doing this for 10 years, PC games are a hobby I have, 90% of the games played on the PC platform are zeroed games in campaign mode most of them in normal or hard mode.
         </p>
 
         <Link href="/">

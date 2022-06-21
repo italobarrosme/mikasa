@@ -6,6 +6,9 @@
 .main {
   padding: 42px;
   display: flex;
+  flex-direction: row;
+  gap: 50%;
   justify-content: center;
   align-items: center;
+  height: 50vh;
 }

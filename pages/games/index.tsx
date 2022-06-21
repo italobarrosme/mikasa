@@ -25,7 +25,7 @@ const Games: NextPage = ({ games }: any) => {
         <title>Game Over | Game list</title>
       </Head>
       <main className={styles.main}>
-        <h1 className={styles.h1}>List Games</h1>
+        <h1 className={styles.h1}>Game List</h1>
 
         <ul className={styles.ul}>
           {games.map((game: any) => (

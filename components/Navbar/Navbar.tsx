@@ -47,7 +47,6 @@ const Navbar = () => {
           ))}
         </ul>
       </nav>
-      <div className={styles.hr}></div>
     </>
   )
 }

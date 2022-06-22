@@ -1,11 +1,11 @@
 const theme = {
   colors: {
     brand: {
-      base: '#EDF2F9',
-      dark: '#0264A7',
-      light: '#EDF2F9',
-      primary: '#049EDA',
-      secondary: '#69C4DA',
+      dark: '#2E1440',
+      light: '#F2E30F',
+      primary: '#F22EAE',
+      secondary: '#401B59',
+      ternary: '#F2A516'
     },
   },
   fonts: {

@@ -33,7 +33,7 @@
         left: 20px;
         width: 40px;
         height: 40px;
-        background-color: #0264A7;
+        background-color: #F22EAE;
         border-radius: 50%;
         opacity: 0.3;
         animation: SizeAnimate 1s ease;
@@ -42,12 +42,12 @@
   }
   :hover {
     cursor: pointer;
-    color: #69C4DA;
+    color: #F2E30F;
   }
 }
 
 .hr {
-  border-bottom: #0264A7 .5px solid;
+  border-bottom: #F2E30F .5px solid;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -57,8 +57,8 @@
 .logo {
   > svg {
     padding: 0.5em;
-    width: 120px;
-    height: 120px;
+    width: 64px;
+    height: 64px;
   }
 }
 

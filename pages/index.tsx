@@ -17,7 +17,7 @@ const Home: NextPage = () => {
             <h1 className={styles.h1}>
             Finished a game?
             </h1> 
-            <Button colorScheme='whiteAlpha'>Register here and share your game</Button>
+            <Button bg='brand.light'>Register here and share your game</Button>
           </div>
         </div>
         <div className={styles.content}>

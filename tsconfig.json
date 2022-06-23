@@ -2,8 +2,6 @@
   "compilerOptions": {
     "types": [
       "node",
-      "jest",
-      "testing-library__jest-dom"
     ],
     "target": "es5",
     "lib": [
@@ -50,7 +48,6 @@
   },
   "include": [
     "next-env.d.ts",
-    "./jest-setup.ts",
     "**/*.ts",
     "**/*.tsx"
   ],

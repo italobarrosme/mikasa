@@ -1,54 +1,81 @@
-import type { GetStaticPaths } from 'next'
+import type { GetStaticPaths, GetStaticProps } from 'next'
 import styles from './../../styles/Games.module.scss'
+import { GET_GAME } from '../../lib/querys'
+import { client } from './../../lib/apollo'
+
+import { Icon } from '@iconify/react';
+import { useEffect, useState } from 'react';
 
 export const getStaticPaths: GetStaticPaths = async () => {
+
   return {
     paths: [],
     fallback: 'blocking'
   }
 }
 
+export const getStaticProps: GetStaticProps = async (context: any) => {
 
-export const getStaticProps = async (context: any) => {
-  const { name } = context.params
-
-  // const response = await fetch(`https://api.rawg.io/api/games?key=69002ae81c6b49eab730ac819760dcc5&search=${name}&search_exact=true`)
-
-
-  // const data = await response.json().catch(err => console.log(err))
-  const data = {
-    results: []
-  }
+  const { id } = context.params;
+  const { data } = await client.query({
+    query: GET_GAME,
+    variables: {
+      id: id
+    }
+  })
 
   return {
     props: {
-      game: data.results[0] || {name: 'Not Found Game', background_image: 'https://via.placeholder.com/300x200'},
-      data: new Date().toISOString()
+      game: data?.game || { name: 'Not Found Game', background_image: 'https://via.placeholder.com/300x200' },
     },
     revalidate: 30
   }
 }
-const Details = ({game, data}:any) => {
- 
-  let dataFormatada = new Date(data).toLocaleDateString('pt-BR');
+const Details = ({ game }: any) => {
+
+
+
+  let dataFormatada = new Date(game.finished).toLocaleDateString('pt-BR');
+
+  const [stars, setStar] = useState([0]);
+
+  useEffect(() => {
+    if (game.rating) {
+      setStar(Array.from({ length: game.rating }, (_, i) => i + 1))
+    }
+  }, [game.rating])
 
   return (
     <>
-        <main className={styles.main__details}>
-        <div className={styles.left__content}>
-          <img src={game.background_image} alt={game.name} />
-          <h2>{game.name}</h2>
-
-          <p> {dataFormatada} </p>
-
-          <p>{ game.rating }</p>
-
-        </div>
-        <div className={styles.right__content}>
-          <h2>Description</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat iure sint maxime facilis adipisci impedit dolorem odio 
-            temporibus, sunt commodi veritatis dicta, dignissimos minima possimus cupiditate dolor aperiam velit molestiae!</p>
-        </div>
+      <main className={styles.main__details}>
+        <section className="text-gray-600 body-font overflow-hidden">
+          <div className="container px-5 py-24 mx-auto">
+            <div className="lg:w-4/5 mx-auto flex flex-wrap">
+              <img alt="ecommerce" className="w-[320px] h-[320px]" src={game.image.url} />
+              <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+                <h2 className="text-sm title-font text-gray-500 tracking-widest">Finished Date {dataFormatada}</h2>
+                <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">{game.title}</h1>
+                <div className="flex mb-4">
+                  <span className="text-gray-600 ml-3 flex items-center gap-1">{stars.map((item) => (
+                    <Icon key={item} icon={'ant-design:star-filled'} />
+                  ))} Rating</span>
+                </div>
+                <p className="leading-relaxed">{game.description}</p>
+                <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
+                  <div className="flex ml-6 items-center">
+                    <div className="relative">
+                      <span className="absolute right-0 top-0 h-full w-10 text-center text-gray-600 pointer-events-none flex items-center justify-center">
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex">
+                  <span className="title-font font-medium text-2xl text-gray-900">{game.orderFinished}º Finished</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
     </>

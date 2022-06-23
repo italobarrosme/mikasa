@@ -4,25 +4,14 @@ import Link from 'next/link'
 import Head from 'next/head'
 import Card from './../../components/Card'
 import { useQuery } from '@apollo/client'
-import { GET_GAMES } from '../../lib/querys'
-
-
-
-// export const getStaticProps = async () => {
-  // const ramdomNumber = Math.floor(Math.random() * 10)
-  // const response = await fetch(`https://api.rawg.io/api/games?key=69002ae81c6b49eab730ac819760dcc5&page=${ramdomNumber}`)
-  // const data = await response.json()
-
-  // return {
-  //   props: {
-  //     games: data
-  //   }
-  // }
-
-// }
+import { GET_GAMES, GetGamesQueryResponse  } from '../../lib/querys'
 
 const Games: NextPage = () => {
-  const { data } = useQuery(GET_GAMES)
+  const { data } = useQuery<GetGamesQueryResponse>(GET_GAMES)
+
+
+  console.log(data, 'DATA')
+
 
   return(
     <>
@@ -35,9 +24,9 @@ const Games: NextPage = () => {
         <ul className={styles.ul}>
           {data?.games.map((game: any) => (
             <li key={game.id} className={styles.li}>
-              <Link href={'/games/' + game.title}>
+              <Link href={'/games/' + game.id}>
                 <a className={styles.a}>
-                  <Card title={game.title} image={game.image.url}/>
+                  <Card title={game.title} image={game?.image.url} order={game.orderFinished}/>
                 </a>
               </Link>
             </li>

@@ -10,9 +10,9 @@ import 'tailwindcss/tailwind.css'
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ApolloProvider client={client}>
-        <DefaultLayout>
-          <Component {...pageProps} />
-        </DefaultLayout>
+      <DefaultLayout>
+        <Component {...pageProps} />
+      </DefaultLayout>
     </ApolloProvider>
   )
 }

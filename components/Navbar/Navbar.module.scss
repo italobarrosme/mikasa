@@ -11,7 +11,6 @@
 .items_list {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
   align-items: center;
   padding: 0;
   margin: 0;
@@ -27,13 +26,13 @@
     position: relative;
     &.__active {
       >::after {
+        @apply bg-brand-secondary;
         content: "";
         position: absolute;
         top: 1px;
         left: 20px;
         width: 40px;
         height: 40px;
-        background-color: #F22EAE;
         border-radius: 50%;
         opacity: 0.3;
         animation: SizeAnimate 1s ease;
@@ -41,17 +40,8 @@
     }
   }
   :hover {
-    cursor: pointer;
-    color: #F2E30F;
+    @apply cursor-pointer underline;
   }
-}
-
-.hr {
-  border-bottom: #F2E30F .5px solid;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  height: 1px;
 }
 
 .logo {

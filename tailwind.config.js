@@ -3,6 +3,7 @@ module.exports = {
   content:[
    './pages/**/*.{js,ts,jsx,tsx}', 
    './components/**/*.{js,ts,jsx,tsx}', 
+   './useCases/**/*.{js,ts,jsx,tsx}',
    './layouts/**/*.{js,ts,jsx,tsx}'
   ],
     theme: {
@@ -14,16 +15,17 @@ module.exports = {
       },
       colors: {
         brand: {
-          dark: '#2E1440',
-          light: '#F2E30F',
-          primary: '#F22EAE',
-          secondary: '#401B59',
-          ternary: '#F2A516'
+          dark: '#0D0D0D',
+          light: '#F2F2F2',
+          primary: '#595959',
+          secondary: '#A6A6A6',
+          soft: '#D9D9D9'
         },
       },
       fontFamily: {
         sans: ['Graphik', 'sans-serif'],
         serif: ['Merriweather', 'serif'],
+        mono: ['Fira Code'],
       },
       extend: {
         spacing: {

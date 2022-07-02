@@ -32,6 +32,9 @@
       "@/types/*": [
         "types/*"
       ],
+      "@/graphQl/*": [
+        "graphQl/*"
+      ],
       "@/styles/*": [
         "styles/*"
       ],
@@ -40,6 +43,9 @@
       ],
       "@/layouts/*": [
         "layouts/*"
+      ],
+      "@/useCases/*": [
+        "useCases/*"
       ],
       "@/components/*": [
         "components/*"

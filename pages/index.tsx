@@ -1,8 +1,8 @@
 import type { NextPage } from 'next'
-import styles from '../styles/Home.module.scss'
+import styles from '@/styles/Home.module.scss'
 import Head from 'next/head'
-import LastGames from '../components/LastGames'
-
+import { LastGames } from '@/useCases/LastGames'
+import { RegisterGame } from '@/useCases/RegisterGame'
 const Home: NextPage = () => {
   return (
     <>
@@ -10,18 +10,9 @@ const Home: NextPage = () => {
         <title>Game Over | Home</title>
         <meta name="keywords" content="games" />
       </Head>
-      <main className={styles.main}>
-        <div className={styles.hero}>
-          <div className={styles.hero_text}>
-            <h1 className="text-3xl font-serif">
-            Finished a game?
-            </h1>
-          </div>
-        </div>
-        <div className={styles.content}>
-          <LastGames />
-        </div>
-      </main>
+      <div className={styles.home}>
+        <RegisterGame></RegisterGame>
+      </div>
     </>
   )
 }

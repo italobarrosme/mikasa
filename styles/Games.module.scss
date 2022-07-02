@@ -1,9 +1,9 @@
-.main {
-  padding: 42px;
+.games {
+  @apply h-full overflow-y-auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  
 }
 
 .h1 {
@@ -27,7 +27,6 @@
 }
 
 .main__details {
-  padding: 42px;
   display: flex;
   flex-direction: row;
   justify-content: center;

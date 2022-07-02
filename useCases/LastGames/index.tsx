@@ -1,6 +1,4 @@
-import Card from '../Card';
-
-const LastGame = () => {
+export const LastGames = () => {
   return (
     <>
       <main>
@@ -13,5 +11,3 @@ const LastGame = () => {
     </>
   );
 }
-
-export default LastGame;

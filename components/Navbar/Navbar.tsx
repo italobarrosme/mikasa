@@ -20,7 +20,7 @@ const pages = [
     href: '/about',
     icon: 'info'
   }
-  
+
 ]
 
 
@@ -28,9 +28,10 @@ const Navbar = () => {
 
   const router = useRouter();
 
-  return(
+  return (
     <>
       <nav className={styles.navbar_list}>
+
         <div className={styles.logo}>
           <Icon icon="simple-icons:pcgamingwiki" />
           {/* <Image src="/logo.png" width={'64'} height={'64'} alt="logo" /> */}

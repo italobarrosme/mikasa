@@ -38,8 +38,8 @@
       "@/styles/*": [
         "styles/*"
       ],
-      "@/context/*": [
-        "context/*"
+      "@/contexts/*": [
+        "contexts/*"
       ],
       "@/layouts/*": [
         "layouts/*"
@@ -49,7 +49,10 @@
       ],
       "@/components/*": [
         "components/*"
-      ]
+      ],
+      "@/ui/*": [
+        "ui/*"
+      ],
     }
   },
   "include": [

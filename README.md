@@ -13,3 +13,4 @@ The project aims to create an application in which I can catalog the games I hav
 - Zustend
 - Vitest
 - Testing-library
+- Sass

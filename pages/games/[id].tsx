@@ -43,7 +43,7 @@ const Details = ({ game }: any) => {
 
   return (
     <section className={styles.main__details}>
-      <div className="container px-5 py-24 mx-auto">
+      <div className="mx-auto">
         <div className="mx-auto flex flex-wrap">
           <img alt="ecommerce" className="w-[320px] h-[320px]" src={game.image.url} />
           <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">

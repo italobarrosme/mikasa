@@ -1,6 +1,12 @@
 import styles from './Card.module.scss'
 
-export const Card = ({ title, order, image }: any) => {
+type CardProps = {
+  title: string,
+  order: number,
+  image: string,
+}
+
+export const Card = ({ title, order, image }: CardProps) => {
   return (
 
     <div className={styles.card}>

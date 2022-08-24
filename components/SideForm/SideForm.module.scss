@@ -1,3 +1,51 @@
 .component {
-  @apply w-[320px] h-screen absolute right-0 top-0 bg-brand-light shadow-lg p-4;
+  @apply w-[320px] h-screen absolute right-0 top-0 bg-brand-light shadow-lg;
+
+
+}
+
+.is {
+  &Open {
+    @apply block;
+    animation: SlideAnimationOn 500ms linear forwards;
+  }
+
+  &Closed {
+    @apply hidden;
+  }
+}
+
+
+
+.header {
+  @apply flex items-center justify-between bg-brand-dark relative;
+
+  >h1 {
+    @apply w-full text-brand-soft text-2xl p-4 flex;
+  }
+
+  >button {
+    @apply bg-transparent absolute top-5 right-5;
+
+    >svg {
+      @apply text-white;
+
+    }
+  }
+}
+
+.navbar {
+  @apply flex-col gap-2 p-4;
+}
+
+@keyframes SlideAnimationOn {
+  0% {
+
+    transform: translateX(250px);
+  }
+
+  100% {
+    transform: translateX(0px);
+
+  }
 }

@@ -1,4 +1,4 @@
-import { Navbar } from "../components/Navbar/Navbar";
+import { Navbar } from "@/components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import Head from 'next/head'
 import styles from './DefaultLayout.module.scss'

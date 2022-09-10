@@ -19,5 +19,10 @@
       "addWords": true,
       "scope": "workspace"
     }
-  }
+  },
+  "cSpell.ignoreWords": [
+    "clsx",
+    "iconify",
+    "usehooks"
+  ]
 }

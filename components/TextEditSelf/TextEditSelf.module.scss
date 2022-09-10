@@ -1,0 +1,23 @@
+.component {
+  @apply flex items-center gap-4 max-w-[360px] mb-4;
+}
+
+.contentInput {
+  @apply relative;
+}
+
+.inputFormEdit {
+  @apply w-auto max-w-[210px] sm: max-w-xs text-xl font-medium rounded-sm relative;
+}
+
+.iconEdit {
+  @apply text-primary cursor-pointer text-2xl;
+}
+
+.inputHint {
+  @apply text-gray-600 text-xs absolute top-14 left-0 mr-2 italic;
+}
+
+.errorHint {
+  @apply text-red-600 text-sm;
+}

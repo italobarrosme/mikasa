@@ -3,7 +3,7 @@ import { Icon } from '@iconify/react';
 import { ReactNode } from 'react'
 import clsx from 'clsx';
 
-type SideFormProps = {
+export type SideFormProps = {
   children: ReactNode
   title?: string,
   toggle: string,

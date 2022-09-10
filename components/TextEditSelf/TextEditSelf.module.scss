@@ -1,5 +1,9 @@
 .component {
-  @apply flex items-center gap-4 max-w-[360px] mb-4;
+  @apply flex items-center gap-4 max-w-[375px] mb-4 relative h-24;
+}
+
+.label {
+  @apply absolute bottom-20;
 }
 
 .contentInput {
@@ -7,11 +11,11 @@
 }
 
 .inputFormEdit {
-  @apply w-auto max-w-[210px] sm: max-w-xs text-xl font-medium rounded-sm relative;
+  @apply w-auto max-w-[210px] h-10 outline-none text-sm font-medium rounded-sm relative px-2;
 }
 
 .iconEdit {
-  @apply text-primary cursor-pointer text-2xl;
+  @apply cursor-pointer text-2xl;
 }
 
 .inputHint {
@@ -20,4 +24,8 @@
 
 .errorHint {
   @apply text-red-600 text-sm;
+}
+
+.buttonSave {
+  @apply text-white bg-brand-primary rounded-sm p-2;
 }

@@ -3,6 +3,7 @@ import { useUiStore } from '@/ui/store';
 import { SideForm } from '@/components/SideForm';
 import { FormEvent } from 'react';
 import clsx from 'clsx';
+import { TextEditSelf } from '@/components/TextEditSelf';
 
 export const RegisterGame = () => {
   const sendData = useRegisterGameStore(state => state.registerGameData);
@@ -31,7 +32,6 @@ export const RegisterGame = () => {
     console.log(sendData, 'sobr');
   }
   const CloseForm = () => {
-    console.log('HERE')
     setIsSideForm(false);
 
   }
@@ -43,34 +43,15 @@ export const RegisterGame = () => {
       <button onClick={(event) => setIsSideForm(!isSideForm)}>Go Insert Game</button>
       <SideForm title="Insert Game to Catalog" toggle={isSideForm ? 'isOpen' : 'isClosed'} emitEventClose={CloseForm}>
         <form onSubmit={onSubmit}>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <div>
-              <label className="text-sm">Order Finished</label>
-              <input name="orderFinished" type="text" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:outline-none focus:ring" />
-            </div>
-            <div>
-              <label className="text-sm" >Title</label>
-              <input name="title" type="text" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:outline-none focus:ring" />
-            </div>
-            <div>
-              <label className="text-sm" >Description</label>
-              <input name="description" type="text" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:outline-none focus:ring" />
-            </div>
-            <div>
-              <label className="text-sm">Finished date</label>
-              <input name="finishedDate" type="date" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:outline-none focus:ring" />
-            </div>
-            <div>
-              <label className="text-sm">Image</label>
-              <input name="image" type="text" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:outline-none focus:ring" />
-            </div>
-            <div>
-              <label className="text-sm">Rating</label>
-              <input name="rating" type="number" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:outline-none focus:ring" />
-            </div>
+          <div className="flex-col mt-10">
+            <TextEditSelf label="What was the order of the finished game?" placeholder="Order Finished" />
+            <TextEditSelf label="What was the game's title?" placeholder="Title" />
+            <TextEditSelf label="What's this game about?" placeholder="Description" />
+
           </div>
-          <div className="flex justify-end mt-6">
-            <button className="px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">Save</button>
+
+          <div className="flex mt-24">
+            <button className="w-full px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">Save</button>
           </div>
         </form>
       </SideForm>

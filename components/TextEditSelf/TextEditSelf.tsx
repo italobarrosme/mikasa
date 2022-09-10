@@ -11,6 +11,7 @@ export type TextEditSelfProps = {
   hint?: string
   errorHint?: string
   countCharacters?: number
+  label?: string
 } & InputHTMLAttributes<HTMLInputElement>
 
 export const TextEditSelf = ({
@@ -18,6 +19,7 @@ export const TextEditSelf = ({
   hint,
   placeholder,
   errorHint = '',
+  label = '',
   onChange,
   emitSave,
   countCharacters: countCharacters = 20,
@@ -45,6 +47,7 @@ export const TextEditSelf = ({
   return (
     <>
       <div {...props} className={style.component} ref={componentRef}>
+        {label && <span className={clsx(style.label)}>{label}</span>}
         <div className={style.contentInput}>
           <input
             type="text"
@@ -76,7 +79,7 @@ export const TextEditSelf = ({
         {isEditing ? (
           <button
             aria-label="button-save"
-            className="btn-primary btn-xs ml-4 rounded-sm"
+            className={style.buttonSave}
             onClick={saveData}
           >
             Save

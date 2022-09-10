@@ -28,6 +28,14 @@ export const GET_GAME = gql`
     }
   }`
 
+export const REGISTER_GAME = gql`
+  mutation InsertGame($data: game) {
+  createGame(
+    data: game
+  ) {
+    id
+  }
+}`
 export interface GetGamesQueryResponse {
   games: {
     id: string

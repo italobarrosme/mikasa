@@ -1,1 +1,1 @@
-export { SideForm } from './SideForm';
+export { SideForm, type SideFormProps } from './SideForm';

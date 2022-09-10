@@ -1,0 +1,1 @@
+export { TextEditSelf, type TextEditSelfProps } from './TextEditSelf'

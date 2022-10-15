@@ -3,10 +3,23 @@ import { RegisterGameType } from './types'
 
 type State = {
   registerGameData: RegisterGameType,
-  setRegisterGame: (registerGame: RegisterGameType) => void
+  setRegisterGame: (payload: RegisterGameType) => void
+  clearRegisterGame: () => void
 }
 
+const registerGameData = {
+  orderFinished: 0,
+  description: '',
+  finishedDate: '',
+  image: {
+    url: '',
+  },
+  rating: 0,
+  title: '',
+} as RegisterGameType;
+
 export const useRegisterGameStore = create<State>(set => ({
-  registerGameData: {} as RegisterGameType,
-  setRegisterGame: (registerGameData: RegisterGameType) => set({ registerGameData }),
+  registerGameData,
+  setRegisterGame: (payload: RegisterGameType) => set({ registerGameData: payload }),
+  clearRegisterGame: () => set({ registerGameData: registerGameData }),
 }));

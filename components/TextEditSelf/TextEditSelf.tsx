@@ -20,6 +20,7 @@ export const TextEditSelf = ({
   placeholder,
   errorHint = '',
   label = '',
+  name = '',
   onChange,
   emitSave,
   countCharacters: countCharacters = 20,
@@ -63,6 +64,7 @@ export const TextEditSelf = ({
                   : 'bg-transparent focus:outline-none cursor-default pl-0',
               ]
             )}
+            name={name}
             defaultValue={defaultValue}
             readOnly={!isEditing}
             onChange={onChange}
@@ -78,6 +80,7 @@ export const TextEditSelf = ({
 
         {isEditing ? (
           <button
+            type='button'
             aria-label="button-save"
             className={style.buttonSave}
             onClick={saveData}
@@ -85,7 +88,7 @@ export const TextEditSelf = ({
             Save
           </button>
         ) : (
-          <button aria-label="button-edit" onClick={() => setIsEdit(true)}>
+          <button aria-label="button-edit" type='button' onClick={() => setIsEdit(true)}>
             <Icon icon={'bx:edit'} className={clsx(style.iconEdit)} />
           </button>
         )}

@@ -17,8 +17,10 @@ const Games: NextPage = () => {
       <Head>
         <title>Game Over | Game list</title>
       </Head>
-      <section >
-        <h1 className="bg-brand-dark text-white p-4 my-8 rounded-md">Game List</h1>
+      <section>
+        <div className="flex justify-center items-center mb-4">
+          <h1 className="title-font font-medium text-2xl bg-brand-dark text-white mb-4 w-[140px]">Game List</h1>
+        </div>
 
         <ul className="flex flex-wrap gap-6 justify-center">
           {data?.games.map((game: any) => (

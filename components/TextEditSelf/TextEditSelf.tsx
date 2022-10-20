@@ -2,7 +2,6 @@ import { Icon } from '@iconify/react'
 import clsx from 'clsx'
 import { useRef, useState, InputHTMLAttributes, useEffect } from 'react'
 import { useOnClickOutside } from 'usehooks-ts'
-import style from './TextEditSelf.module.scss'
 import { ChangeEvent } from 'react'
 
 export type TextEditSelfProps = {
@@ -20,6 +19,7 @@ export const TextEditSelf = ({
   placeholder,
   errorHint = '',
   label = '',
+  name = '',
   onChange,
   emitSave,
   countCharacters: countCharacters = 20,
@@ -46,15 +46,15 @@ export const TextEditSelf = ({
 
   return (
     <>
-      <div {...props} className={style.component} ref={componentRef}>
-        {label && <span className={clsx(style.label)}>{label}</span>}
-        <div className={style.contentInput}>
+      <div {...props} className="flex items-center gap-4 max-w-[375px] mb-4 relative h-24" ref={componentRef}>
+        {label && <span className="absolute bottom-20">{label}</span>}
+        <div className="relative">
           <input
             type="text"
             placeholder={placeholder}
             className={clsx(
               'input',
-              style.inputFormEdit,
+              'w-auto max-w-[210px] h-10 outline-none text-sm font-medium rounded-sm relative px-2',
               errorHint?.length ? 'border-error border-2' : '',
               countCharacters > 20 ? 'min-w-[320px]' : '',
               [
@@ -63,13 +63,14 @@ export const TextEditSelf = ({
                   : 'bg-transparent focus:outline-none cursor-default pl-0',
               ]
             )}
+            name={name}
             defaultValue={defaultValue}
             readOnly={!isEditing}
             onChange={onChange}
           />
-          <div arial-label="hint" className={style.inputHint}>
+          <div arial-label="hint" className="text-gray-600 text-xs absolute top-14 left-0 mr-2 italic;">
             {errorHint?.length ? (
-              <span className={style.errorHint}>{errorHint}</span>
+              <span className="text-red-600 text-sm">{errorHint}</span>
             ) : (
               <span>{isEditing ? hint : ''}</span>
             )}
@@ -78,15 +79,16 @@ export const TextEditSelf = ({
 
         {isEditing ? (
           <button
+            type='button'
             aria-label="button-save"
-            className={style.buttonSave}
+            className="text-white bg-brand-primary rounded-sm p-2"
             onClick={saveData}
           >
             Save
           </button>
         ) : (
-          <button aria-label="button-edit" onClick={() => setIsEdit(true)}>
-            <Icon icon={'bx:edit'} className={clsx(style.iconEdit)} />
+          <button aria-label="button-edit" type='button' onClick={() => setIsEdit(true)}>
+            <Icon icon={'bx:edit'} className="cursor-pointer text-2xl" />
           </button>
         )}
       </div>

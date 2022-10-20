@@ -1,7 +1,6 @@
 import type { NextPage } from 'next'
 import Link from 'next/link'
 import { Icon } from '@iconify/react';
-import styles from '../styles/404.module.scss';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 
@@ -28,7 +27,7 @@ const NotFound: NextPage = () => {
             <p className="text-2xl font-semibold md:text-3xl">Sorry, we couldnt find this page.</p>
             <p className="mt-4 mb-8 dark:text-gray-400">But dont worry, you can find plenty of other things on our homepage.</p>
             <Link href="/">
-              <a className={styles.a}><Icon icon={'bi:arrow-left-circle'} />Back to Home </a>
+              <a><Icon icon={'bi:arrow-left-circle'} />Back to Home </a>
             </Link>
           </div>
         </div>

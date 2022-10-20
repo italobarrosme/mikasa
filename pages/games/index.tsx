@@ -1,4 +1,3 @@
-import styles from './../../styles/Games.module.scss'
 import type { NextPage } from 'next'
 import Link from 'next/link'
 import Head from 'next/head'
@@ -18,14 +17,14 @@ const Games: NextPage = () => {
       <Head>
         <title>Game Over | Game list</title>
       </Head>
-      <section className={styles.games}>
-        <h1 className={styles.h1}>Game List</h1>
+      <section >
+        <h1 className="bg-brand-dark text-white p-4 my-8 rounded-md">Game List</h1>
 
-        <ul className={styles.ul}>
+        <ul className="flex flex-wrap gap-6 justify-center">
           {data?.games.map((game: any) => (
-            <li key={game.id} className={styles.li}>
+            <li key={game.id}>
               <Link href={'/games/' + game.id}>
-                <a className={styles.a}>
+                <a>
                   <Card title={game.title} image={game?.image.url} order={game.orderFinished} />
                 </a>
               </Link>

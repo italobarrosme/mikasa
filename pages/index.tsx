@@ -1,5 +1,4 @@
 import type { NextPage } from 'next'
-import styles from '@/styles/Home.module.scss'
 import Head from 'next/head'
 import { RegisterGame } from '@/useCases/RegisterGame'
 
@@ -10,7 +9,7 @@ const Home: NextPage = () => {
         <title>Game Over | Home</title>
         <meta name="keywords" content="games" />
       </Head>
-      <div className={styles.home}>
+      <div className="flex justify-center items-center h-full">
         <RegisterGame></RegisterGame>
       </div>
     </>

@@ -1,7 +1,6 @@
 import { Navbar } from "@/components/Navbar/Navbar";
-import Footer from "../components/Footer/Footer";
+import { Footer } from "../components/Footer/Footer";
 import Head from 'next/head'
-import styles from './DefaultLayout.module.scss'
 
 const DefaultLayout = ({ children }: any) => {
   return (
@@ -12,11 +11,10 @@ const DefaultLayout = ({ children }: any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <main className={styles.main}>
+      <main className="h-[calc(100vh-130px)] overflow-y-auto p-6">
         {children}
       </main>
       <Footer />
-
     </div>
   )
 }

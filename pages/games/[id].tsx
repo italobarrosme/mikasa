@@ -1,5 +1,5 @@
 import type { GetStaticPaths, GetStaticProps } from 'next'
-import styles from './../../styles/Games.module.scss'
+
 import { GET_GAME } from '../../graphQl/querys'
 import { client } from '../../graphQl/apollo'
 import { Icon } from '@iconify/react';
@@ -42,7 +42,7 @@ const Details = ({ game }: any) => {
   }, [game.rating])
 
   return (
-    <section className={styles.main__details}>
+    <section>
       <div className="mx-auto">
         <div className="mx-auto flex flex-wrap">
           <img alt="ecommerce" className="w-[320px] h-[320px]" src={game.image.url} />

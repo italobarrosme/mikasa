@@ -37,9 +37,8 @@ export const RegisterGame = () => {
   }
 
   return (
-    <section className="max-w-4xl p-4 mx-auto rounded-md shadow-md bg-brand-soft max-h-96">
-      <h2 className="text-lg font-semibold text-gray-700 capitalize dark:text-white">Game Data</h2>
-      <button onClick={(event) => setIsSideForm(!isSideForm)}>Go Insert Game</button>
+    <section>
+      <button className="text-white rounded-md shadow-md p-4 mx-auto bg-brand-dark" onClick={(event) => setIsSideForm(!isSideForm)}>Go Insert Game</button>
 
       <SideForm title="Insert Game to Catalog" toggle={isSideForm ? 'isOpen' : 'isClosed'} emitEventClose={CloseForm}>
         <form onSubmit={onSubmit}>

@@ -9,8 +9,8 @@ const About: NextPage = () => {
       <Head>
         <title>Game Over | About</title>
       </Head>
-      <main>
-        <h1>About</h1>
+      <main className="flex flex-col justify-center items-center h-[500px]">
+        <h1 className="title-font font-medium text-2xl bg-brand-dark text-white mb-4">About</h1>
         <p>
           This site is used to catalog the games Ive finished.
           Ive been doing this for 10 years, PC games are a hobby I have, 90% of the games played are on the PC platform
@@ -18,7 +18,7 @@ const About: NextPage = () => {
         </p>
 
         <Link href="/">
-          <a><Icon icon={'bi:arrow-left-circle'} />Back to Home </a>
+          <a className="flex items-center gap-4 mt-6"><Icon icon={'bi:arrow-left-circle'} />Back to Home </a>
         </Link>
       </main>
     </>

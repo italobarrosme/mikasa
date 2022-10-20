@@ -47,6 +47,9 @@ const Details = ({ game }: any) => {
         <div className="mx-auto flex flex-wrap">
           <img alt="ecommerce" className="w-[320px] h-[320px]" src={game.image.url} />
           <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+            <div className="flex">
+              <span className="title-font font-medium text-2xl bg-brand-dark text-white mb-4">{game.orderFinished}º Finished</span>
+            </div>
             <h2 className="text-sm title-font text-gray-500 tracking-widest">Finished Date {dataFormatada}</h2>
             <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">{game.title}</h1>
             <div className="flex mb-4">
@@ -62,9 +65,6 @@ const Details = ({ game }: any) => {
                   </span>
                 </div>
               </div>
-            </div>
-            <div className="flex">
-              <span className="title-font font-medium text-2xl text-gray-900">{game.orderFinished}º Finished</span>
             </div>
           </div>
         </div>

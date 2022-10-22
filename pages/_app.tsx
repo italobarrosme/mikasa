@@ -2,10 +2,10 @@ import '@/styles/globals.scss'
 import '@/styles/main.scss'
 
 import type { AppProps } from 'next/app'
-import DefaultLayout from '../layouts/DefaultLayout'
+import DefaultLayout from '@/layouts/DefaultLayout'
 
 import { ApolloProvider } from '@apollo/client'
-import { client } from '../graphQl/apollo'
+import { client } from '@/services/graphQl/apollo'
 
 
 function MyApp({ Component, pageProps }: AppProps) {

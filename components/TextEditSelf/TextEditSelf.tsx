@@ -60,7 +60,7 @@ export const TextEditSelf = ({
               [
                 isEditing
                   ? 'bg-white'
-                  : 'bg-transparent focus:outline-none cursor-default pl-0',
+                  : 'bg-transparent placeholder-brand-secondary focus:outline-none cursor-default pl-0',
               ]
             )}
             name={name}
@@ -68,7 +68,7 @@ export const TextEditSelf = ({
             readOnly={!isEditing}
             onChange={onChange}
           />
-          <div arial-label="hint" className="text-gray-600 text-xs absolute top-14 left-0 mr-2 italic;">
+          <div arial-label="hint" className="text-brand-secondary text-xs absolute top-14 left-0 mr-2 italic;">
             {errorHint?.length ? (
               <span className="text-red-600 text-sm">{errorHint}</span>
             ) : (
@@ -81,7 +81,7 @@ export const TextEditSelf = ({
           <button
             type='button'
             aria-label="button-save"
-            className="text-white bg-brand-primary rounded-sm p-2"
+            className="text-brand-light bg-brand-secondary rounded-sm p-2"
             onClick={saveData}
           >
             Save

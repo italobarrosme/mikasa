@@ -28,11 +28,11 @@ const pages = [
 
 export const Navbar = () => {
   const router = useRouter();
-  const { width, height } = useWindowSize()
+  const { width } = useWindowSize()
 
   return (
     <>
-      <nav className={styles.navbar_list}>
+      <nav className={clsx(styles.navbar_list, 'container mx-auto ')}>
 
         {width > 1080 &&
           <div className={styles.logo}>

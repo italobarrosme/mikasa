@@ -7,6 +7,9 @@ module.exports = {
    './layouts/**/*.{js,ts,jsx,tsx,scss}'
   ],
     theme: {
+      container: {
+        maxWidth: '300%',
+      },
       screens: {
         sm: '480px',
         md: '768px',
@@ -29,10 +32,10 @@ module.exports = {
         colors: {
           brand: {
             dark: '#0D0D0D',
-            light: '#F2F2F2',
-            primary: '#595959',
-            secondary: '#A6A6A6',
-            soft: '#D9D9D9'
+            light: '#FFFFFF',
+            primary: '#FDBA12',
+            secondary: '#22252A',
+            soft: '#2D3035'
           },
           transparent: 'transparent',
         },

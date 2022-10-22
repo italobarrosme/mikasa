@@ -32,8 +32,8 @@
       "@/types/*": [
         "types/*"
       ],
-      "@/graphQl/*": [
-        "graphQl/*"
+      "@/services/*": [
+        "services/*"
       ],
       "@/styles/*": [
         "styles/*"

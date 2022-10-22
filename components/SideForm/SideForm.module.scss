@@ -1,5 +1,5 @@
 .component {
-  @apply w-[375px] h-screen absolute right-0 top-0 bg-brand-light shadow-lg;
+  @apply w-[375px] h-screen absolute right-0 top-0 bg-brand-primary shadow-2xl;
 }
 
 .is {
@@ -17,14 +17,14 @@
   @apply flex items-center justify-between bg-brand-dark relative;
 
   >h1 {
-    @apply w-full text-brand-soft text-xl p-4 flex;
+    @apply w-full text-brand-light text-xl p-4 flex;
   }
 
   >button {
     @apply bg-transparent absolute top-4 right-5 text-3xl;
 
     >svg {
-      @apply text-white;
+      @apply text-brand-light;
 
     }
   }

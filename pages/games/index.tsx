@@ -3,7 +3,8 @@ import Link from 'next/link'
 import Head from 'next/head'
 import { Card } from '@/components/Card'
 import { useQuery } from '@apollo/client'
-import { GET_GAMES, GetGamesQueryResponse } from '@/graphQl/querys'
+import { GET_GAMES, GetGamesQueryResponse } from '@/services/graphQl/querys'
+import { ListCards } from '@/components/ListCards'
 
 const Games: NextPage = () => {
   const { data } = useQuery<GetGamesQueryResponse>(GET_GAMES)
@@ -19,20 +20,10 @@ const Games: NextPage = () => {
       </Head>
       <section>
         <div className="flex justify-center items-center mb-4">
-          <h1 className="title-font font-medium text-2xl bg-brand-dark text-white mb-4 w-[140px]">Game List</h1>
+          <h1 className="title-font font-medium text-2xl bg-brand-dark text-brand-light mb-4 w-[140px]">Game List</h1>
         </div>
 
-        <ul className="flex flex-wrap gap-6 justify-center">
-          {data?.games.map((game: any) => (
-            <li key={game.id}>
-              <Link href={'/games/' + game.id}>
-                <a>
-                  <Card title={game.title} image={game?.image.url} order={game.orderFinished} />
-                </a>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <ListCards items={data?.games} linkRef="/games/" ></ListCards>
       </section>
     </>
   )

@@ -38,7 +38,7 @@ export const RegisterGame = () => {
 
   return (
     <section>
-      <button className="text-white rounded-md shadow-md p-4 mx-auto bg-brand-dark" onClick={(event) => setIsSideForm(!isSideForm)}>Go Insert Game</button>
+      <button className="text-brand-light rounded-md shadow-md p-4 mx-auto bg-brand-secondary" onClick={(event) => setIsSideForm(!isSideForm)}>Go Insert Game</button>
 
       <SideForm title="Insert Game to Catalog" toggle={isSideForm ? 'isOpen' : 'isClosed'} emitEventClose={CloseForm}>
         <form onSubmit={onSubmit}>
@@ -50,7 +50,7 @@ export const RegisterGame = () => {
           </div>
 
           <div className="flex mt-24">
-            <button className="w-full px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">Save</button>
+            <button className="w-full px-6 py-2 leading-5 text-brand-light transition-colors duration-200 transform bg-brand-secondary rounded-md">Save</button>
           </div>
         </form>
       </SideForm>

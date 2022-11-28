@@ -1,10 +1,8 @@
 import type { NextPage } from 'next'
-import Link from 'next/link'
 import Head from 'next/head'
-import { Card } from '@/components/Card'
 import { useQuery } from '@apollo/client'
 import { GET_GAMES, GetGamesQueryResponse } from '@/services/graphQl/querys'
-import { ListCards } from '@/components/ListCards'
+import { ListCards } from '@/useComponents/ListCards'
 
 const Games: NextPage = () => {
   const { data } = useQuery<GetGamesQueryResponse>(GET_GAMES)

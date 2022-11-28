@@ -1,32 +1,38 @@
-import { Icon } from '@iconify/react'
-import clsx from 'clsx'
-import { useRef, useState, InputHTMLAttributes, useEffect } from 'react'
+import { ChangeEvent, TextareaHTMLAttributes, useRef, useEffect, useState } from "react"
+import clsx from "clsx"
 import { useOnClickOutside } from 'usehooks-ts'
-import { ChangeEvent } from 'react'
+import { Icon } from '@iconify/react'
 
-export type TextEditSelfProps = {
+
+
+export type TextAreaEditSelfProps = {
   emitSave?: (event: boolean) => void
-  onChange?: (event: ChangeEvent<HTMLInputElement>) => void
+  onChange?: (e: ChangeEvent<HTMLTextAreaElement>) => void;
+  name: string;
+  label: string;
+  placeholder: string;
   hint?: string
   errorHint?: string
   countCharacters?: number
-  label?: string
-} & InputHTMLAttributes<HTMLInputElement>
+} & TextareaHTMLAttributes<HTMLTextAreaElement>;
 
-export const TextEditSelf = ({
-  defaultValue,
+
+
+export const TextAreaEditSelf = ({
   hint,
   placeholder,
   errorHint = '',
   label = '',
   name = '',
+  rows = 6,
+  cols = 30,
   onChange,
   emitSave,
-  countCharacters: countCharacters = 20,
-  ...props
-}: TextEditSelfProps) => {
-  const [isEditing, setEditingState] = useState(false)
+  defaultValue
+}: TextAreaEditSelfProps) => {
+
   const componentRef = useRef(null)
+  const [isEditing, setEditingState] = useState(false)
 
   useEffect(() => {
     setIsEdit(!!errorHint)
@@ -46,23 +52,22 @@ export const TextEditSelf = ({
 
   return (
     <>
-      <div {...props} className="flex items-center gap-4 max-w-[375px] mb-4 relative h-24" ref={componentRef}>
-        {label && <span className="absolute bottom-20">{label}</span>}
+      <div className="flex items-center gap-4 max-w-[375px] mb-4 relative h-52" ref={componentRef}>
+        {label && <span className="absolute top-0">{label}</span>}
         <div className="relative">
-          <input
-            type="text"
+          <textarea
             placeholder={placeholder}
             className={clsx(
-              'input',
-              'w-auto max-w-[210px] h-10 outline-none text-sm font-medium rounded-sm relative px-2',
+              `w-auto max-w-[210px] outline-none text-sm font-medium rounded-sm p-2 top-14 resize-none`,
               errorHint?.length ? 'border-error border-2' : '',
-              countCharacters > 20 ? 'min-w-[320px]' : '',
               [
                 isEditing
-                  ? 'bg-white'
+                  ? 'bg-white z-20'
                   : 'bg-transparent placeholder-brand-secondary focus:outline-none cursor-default pl-0',
               ]
             )}
+            rows={rows}
+            cols={cols}
             name={name}
             defaultValue={defaultValue}
             readOnly={!isEditing}

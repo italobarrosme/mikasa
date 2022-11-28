@@ -1,9 +1,11 @@
+import { FormEvent, ChangeEvent, useState } from 'react';
+
 import { useRegisterGameStore } from './store';
 import { useUiStore } from '@/ui/store';
-import { SideForm } from '@/components/SideForm';
-import { FormEvent, FormHTMLAttributes, ChangeEvent } from 'react';
-import clsx from 'clsx';
-import { TextEditSelf } from '@/components/TextEditSelf';
+import { SideForm } from '@/useComponents/SideForm';
+import { TextEditSelf } from '@/usePieces/TextEditSelf';
+import { TextAreaEditSelf } from '@/usePieces/TextAreaEditSelf';
+import { AttachmentsEditSelf } from '@/usePieces/AttachmentsEditSelf';
 
 export const RegisterGame = () => {
   const gameData = useRegisterGameStore(state => state.registerGameData);
@@ -13,15 +15,44 @@ export const RegisterGame = () => {
   const clearRegisterGame = useRegisterGameStore(state => state.clearRegisterGame);
 
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
 
     setRegisterGame({
       ...gameData,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const handleChangeTextArea = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    e.preventDefault();
+
+    setRegisterGame({
+      ...gameData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const [file, setFile] = useState<File | null>(null);
+
+  const handlerChangeAttachment = (e: ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+
+
+    if (e.target.files && e.target.files.length > 0) {
+      console.log(e.target.files[0]);
+      setFile(e.target.files[0]);
+    }
+
+    setRegisterGame({
+      ...gameData,
+      image: {
+        url: e.target.value,
+      }
+    });
 
   };
+
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -43,10 +74,10 @@ export const RegisterGame = () => {
       <SideForm title="Insert Game to Catalog" toggle={isSideForm ? 'isOpen' : 'isClosed'} emitEventClose={CloseForm}>
         <form onSubmit={onSubmit}>
           <div className="flex-col mt-10">
-            <TextEditSelf defaultValue={gameData.finishedDate} name="orderFinished" label="What was the order of the finished game?" placeholder="Order Finished" onChange={handleChange} />
-            <TextEditSelf defaultValue={gameData.title} name="title" label="What was the game's title?" placeholder="Title" onChange={handleChange} />
-            <TextEditSelf defaultValue={gameData.description} name="description" label="What's this game about?" placeholder="Description" onChange={handleChange} />
-
+            <TextEditSelf defaultValue={gameData.finishedDate} type="number" name="orderFinished" label="What was the order of the finished game?" placeholder="Order Finished" onChange={handleChangeInput} />
+            <TextEditSelf defaultValue={gameData.title} name="title" label="What was the game's title?" placeholder="Title" onChange={handleChangeInput} />
+            <TextAreaEditSelf value={gameData.description} name="description" label="What's this game about?" placeholder="Description" onChange={handleChangeTextArea} />
+            <AttachmentsEditSelf name="attachments" label="Add some images" placeholder="Attachments here" fileData={file} onChange={handlerChangeAttachment} />
           </div>
 
           <div className="flex mt-24">

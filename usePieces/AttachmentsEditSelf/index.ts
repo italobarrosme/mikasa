@@ -1,0 +1,1 @@
+export { AttachmentsEditSelf, type AttachmentsEditSelfProps } from './AttachmentsEditSelf'

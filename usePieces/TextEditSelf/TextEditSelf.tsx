@@ -1,6 +1,6 @@
 import { Icon } from '@iconify/react'
 import clsx from 'clsx'
-import { useRef, useState, InputHTMLAttributes, useEffect, ChangeEvent } from 'react'
+import { useRef, useState, InputHTMLAttributes, useEffect } from 'react'
 import { useOnClickOutside } from 'usehooks-ts'
 
 export type TextEditSelfProps = {

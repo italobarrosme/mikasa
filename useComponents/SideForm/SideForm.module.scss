@@ -1,5 +1,5 @@
 .component {
-  @apply w-[375px] h-screen absolute right-0 top-0 bg-brand-primary shadow-2xl;
+  @apply w-full h-screen absolute right-0 top-0 bg-brand-primary shadow-2xl md:w-96;
 }
 
 .is {

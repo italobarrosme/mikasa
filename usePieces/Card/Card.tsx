@@ -1,7 +1,7 @@
 import styles from './Card.module.scss'
 import clsx from 'clsx'
 
-type CardProps = {
+export type CardProps = {
   title: string,
   order: number,
   image: string,

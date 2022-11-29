@@ -47,8 +47,11 @@
       "@/useCases/*": [
         "useCases/*"
       ],
-      "@/components/*": [
-        "components/*"
+      "@/useComponents/*": [
+        "useComponents/*"
+      ],
+      "@/usePieces/*": [
+        "usePieces/*"
       ],
       "@/ui/*": [
         "ui/*"

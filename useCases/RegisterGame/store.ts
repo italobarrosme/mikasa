@@ -12,7 +12,7 @@ const registerGameData = {
   description: '',
   finishedDate: '',
   image: {
-    url: '',
+    url: null,
   },
   rating: 0,
   title: '',

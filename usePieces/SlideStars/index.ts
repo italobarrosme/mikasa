@@ -1,0 +1,1 @@
+export {SlideStars, type SlideStarsProps} from './SlideStars';

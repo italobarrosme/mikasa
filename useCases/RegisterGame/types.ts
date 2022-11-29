@@ -1,5 +1,5 @@
 type Image = {
-  url: string;
+  url: File | null;
 }
 
 export type RegisterGameType = {

@@ -2,7 +2,8 @@
 module.exports = {
   content:[
    './pages/**/*.{js,ts,jsx,tsx,,scss}', 
-   './components/**/*.{js,ts,jsx,tsx,scss}', 
+   './useComponents/**/*.{js,ts,jsx,tsx,scss}', 
+   './usePieces/**/*.{js,ts,jsx,tsx,scss}', 
    './useCases/**/*.{js,ts,jsx,tsx,scss}',
    './layouts/**/*.{js,ts,jsx,tsx,scss}'
   ],

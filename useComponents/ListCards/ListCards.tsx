@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { useWindowSize } from 'usehooks-ts'
 import clsx from 'clsx'
-import { Card } from '@/components/Card'
+import { Card } from '@/usePieces/Card'
 
 export type ListCardsProps = {
   items?: Array<any>,

@@ -1,0 +1,11 @@
+.input__file[type='file'] {
+  display: none;
+}
+
+.label {
+    @apply w-auto max-w-[210px] h-10 cursor-pointer p-4 text-sm font-medium rounded-sm relative px-2;
+}
+
+.content__label {
+    @apply p-1 border-dashed border-2 border-brand-light;
+}

@@ -12,7 +12,6 @@ export type SlideStarsProps = {
 export const SlideStars = ({
   starsMax = 5,
   onChange,
-  value = 0,
   defaultValue = 0,
   label
 }: SlideStarsProps) => {
@@ -28,7 +27,7 @@ export const SlideStars = ({
             <Icon
               key={i}
               icon='carbon:star-filled'
-              width={64}
+              width={32}
               className={Styles['rating__star']}
             />
           )
@@ -40,7 +39,7 @@ export const SlideStars = ({
               key={i}
 
               icon='carbon:star'
-              width={64}
+              width={32}
               className={Styles['rating__star']}
             />
           )

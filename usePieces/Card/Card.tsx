@@ -10,7 +10,7 @@ export type CardProps = {
 export const Card = ({ title, order, image }: CardProps) => {
   return (
 
-    <div className={clsx(styles.card, "bg-brand-secondary text-brand-light")}>
+    <div className={clsx(styles.card, "bg-brand-dark text-brand-light")}>
       <div className={styles.card__image}>
         <img src={image} alt={title} />
       </div>

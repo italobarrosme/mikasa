@@ -62,7 +62,7 @@ export const TextAreaEditSelf = ({
               errorHint?.length ? 'border-error border-2' : '',
               [
                 isEditing
-                  ? 'bg-white z-20'
+                  ? 'bg-white z-20 border-2'
                   : 'bg-transparent placeholder-brand-secondary focus:outline-none cursor-default pl-0',
               ]
             )}

@@ -59,7 +59,7 @@ export const TextEditSelf = ({
               countCharacters > 20 ? 'min-w-[320px]' : '',
               [
                 isEditing
-                  ? 'bg-white'
+                  ? 'bg-white border-2'
                   : 'bg-transparent placeholder-brand-secondary focus:outline-none cursor-default pl-0',
               ]
             )}

@@ -45,9 +45,6 @@ export const RegisterGame = () => {
         }
       });
     }
-
-
-
   };
 
   const handlerStarsRating = (e: ChangeEvent<HTMLInputElement>) => {

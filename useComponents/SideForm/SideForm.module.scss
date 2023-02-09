@@ -12,24 +12,23 @@
   }
 }
 
-
 .header {
-  @apply flex items-center justify-between bg-brand-dark relative;
+  @apply flex items-center justify-between bg-brand-dark relative h-16;
 
-  >h1 {
+  > h1 {
     @apply w-full text-brand-light text-xl p-4 flex;
   }
 
-  >button {
+  > button {
     @apply bg-transparent absolute top-4 right-5 text-3xl;
 
-    >svg {
+    > svg {
       @apply text-brand-light;
 
     }
   }
 }
 
-.navbar {
-  @apply flex-col gap-2 p-4 overflow-y-auto h-[inherit];
+.body {
+  @apply flex-col gap-2 p-4 overflow-y-auto h-full pt-16;
 }

@@ -1,4 +1,4 @@
-import { FormEvent, ChangeEvent, useState } from 'react';
+import { FormEvent, ChangeEvent, useState, useEffect } from 'react';
 
 import { useRegisterGameStore } from './store';
 import { useUiStore } from '@/ui/store';
@@ -15,29 +15,32 @@ export const RegisterGame = () => {
   const setIsSideForm = useUiStore(state => state.setIsSideForm);
   const clearRegisterGame = useRegisterGameStore(state => state.clearRegisterGame);
 
-  const handleChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
-    e.preventDefault();
-
+  const handlerChangeInputOrderFinished = (e: ChangeEvent<HTMLInputElement>) => {
     setRegisterGame({
       ...gameData,
-      [e.target.name]: e.target.value,
+      orderFinished: Number(e.target.value),
+    });
+
+  };
+
+  const handlerChangeInputTitle = (e: ChangeEvent<HTMLInputElement>) => {
+    setRegisterGame({
+      ...gameData,
+      title: e.target.value,
     });
   };
 
-  const handleChangeTextArea = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    e.preventDefault();
-
+  const handlerChangeTextArea = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setRegisterGame({
       ...gameData,
-      [e.target.name]: e.target.value,
+      description: e.target.value,
     });
+
+
   };
 
   const handlerChangeAttachment = (e: ChangeEvent<HTMLInputElement>) => {
-    e.preventDefault();
     if (e.target.files && e.target.files.length > 0) {
-      console.log(e.target.files[0]);
-
       setRegisterGame({
         ...gameData,
         image: {
@@ -48,8 +51,6 @@ export const RegisterGame = () => {
   };
 
   const handlerStarsRating = (e: ChangeEvent<HTMLInputElement>) => {
-    e.preventDefault();
-
     setRegisterGame({
       ...gameData,
       rating: Number(e.target.value),
@@ -58,9 +59,11 @@ export const RegisterGame = () => {
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    clearRegisterGame();
+    e.currentTarget.reset();
 
     console.log(gameData, 'OBJ DE ENVIO');
+
+    clearRegisterGame()
 
   }
 
@@ -71,18 +74,27 @@ export const RegisterGame = () => {
   return (
     <section>
       <button className="text-brand-light rounded-md shadow-md p-4 mx-auto bg-brand-secondary" onClick={(event) => setIsSideForm(!isSideForm)}>Go Insert Game</button>
-
       <SideForm title="Insert Game to Catalog" toggle={isSideForm ? 'isOpen' : 'isClosed'} emitEventClose={CloseForm}>
-        <form onSubmit={onSubmit}>
-          <div className="flex-col mt-10">
-            <TextEditSelf defaultValue={gameData.finishedDate} type="number" name="orderFinished" label="What was the order of the finished game?" placeholder="Order Finished" onChange={handleChangeInput} />
-            <TextEditSelf defaultValue={gameData.title} name="title" label="What was the game's title?" placeholder="Title" onChange={handleChangeInput} />
-            <TextAreaEditSelf value={gameData.description} name="description" label="What's this game about?" placeholder="Description" onChange={handleChangeTextArea} />
-            <AttachmentsEditSelf name="attachments" label="Add some images" placeholder="Attachments here" fileData={gameData.image.url} onChange={handlerChangeAttachment} />
-            <SlideStars defaultValue={gameData.rating} label="How many stars does this game deserve?" onChange={handlerStarsRating} />
+        <form onSubmit={onSubmit} className="h-[774px] mb-4">
+          <div className="flex-col">
+            <div>
+              <TextEditSelf defaultValue={gameData.orderFinished} type="number" name="orderFinished" label="What was the order of the finished game?" placeholder="Order Finished" onChange={(e) => handlerChangeInputOrderFinished(e)} />
+            </div>
+            <div>
+              <TextEditSelf defaultValue={gameData.title} name="title" label="What was the game's title?" placeholder="Title" onChange={handlerChangeInputTitle} />
+            </div>
+            <div>
+              <TextAreaEditSelf defaultValue={gameData.description} name="description" label="What's this game about?" placeholder="Description" onChange={handlerChangeTextArea} />
+            </div>
+            <div>
+              <AttachmentsEditSelf name="attachments" label="Add some images" placeholder="Attachments here" fileData={gameData.image.url} onChange={handlerChangeAttachment} />
+            </div>
+            <div>
+              <SlideStars defaultValue={gameData.rating} label="How many stars does this game deserve?" onChange={handlerStarsRating} />
+            </div>
           </div>
 
-          <div className="flex mt-24">
+          <div className="flex">
             <button className="w-full px-6 py-2 leading-5 text-brand-light transition-colors duration-200 transform bg-brand-secondary rounded-md">Save</button>
           </div>
         </form>

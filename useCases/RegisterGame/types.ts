@@ -3,7 +3,7 @@ type Image = {
 }
 
 export type RegisterGameType = {
-  orderFinished: number,
+  orderFinished: number | string,
   title: string,
   description: string,
   finishedDate: string,

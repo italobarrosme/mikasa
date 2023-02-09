@@ -13,15 +13,15 @@ export type SideFormProps = {
 export const SideForm = ({ children, title = 'Titulo', emitEventClose, toggle = 'isClosed', ...props }: SideFormProps) => {
   return (
     <aside  {...props} className={clsx(Styles[toggle], Styles.component)} >
-      <div className={Styles.header}>
+      <nav className={Styles.header}>
         <h1>{title}</h1>
         <button onClick={() => emitEventClose(true)}>
           <Icon icon="ep:circle-close-filled" />
         </button>
-      </div>
-      <nav className={Styles.navbar}>
-        {children}
       </nav>
+      <div className={Styles.body}>
+        {children}
+      </div>
     </aside>
   )
 

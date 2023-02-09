@@ -16,11 +16,9 @@ export const SlideStars = ({
   label
 }: SlideStarsProps) => {
 
-
-
   return (
     <div className="flex items-center relative h-32">
-      {label && <span className="absolute top-0">{label}</span>}
+      {label && <span className="absolute top-0 font-bold">{label}</span>}
       <label htmlFor='slideStars' className={Styles['rating__stars']}>
         {[...Array(defaultValue)].map((_, i) => {
           return (

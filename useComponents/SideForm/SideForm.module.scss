@@ -1,5 +1,5 @@
 .component {
-  @apply w-full h-screen absolute right-0 top-0 bg-brand-light shadow-2xl md:w-96;
+  @apply w-full h-auto absolute right-0 top-0 bg-brand-light shadow-2xl md:w-96;
 }
 
 .is {
@@ -13,7 +13,7 @@
 }
 
 .header {
-  @apply flex items-center justify-between bg-brand-dark relative h-16;
+  @apply flex items-center justify-between bg-brand-accent relative h-16;
 
   > h1 {
     @apply w-full text-brand-light text-xl p-4 flex;

@@ -1,4 +1,3 @@
-import styles from './Card.module.scss'
 import clsx from 'clsx'
 
 export type CardProps = {
@@ -10,13 +9,13 @@ export type CardProps = {
 export const Card = ({ title, order, image }: CardProps) => {
   return (
 
-    <div className={clsx(styles.card, "bg-brand-dark text-brand-light")}>
-      <div className={styles.card__image}>
-        <img src={image} alt={title} />
+    <div className={clsx("bg-brand-primary text-brand-light max-w-xs p-6 rounded-md shadow-md hover:bg-brand-accent")}>
+      <div >
+        <img className='object-fit object-center w-full rounded-md h-56 ' src={image} alt={title} />
       </div>
-      <div className={styles.card__content}>
-        <span className={styles.order}>Order Finished {order}º</span>
-        <h3 className={styles.card__title}>{title}</h3>
+      <div className="mt-6 mb-2 h-20">
+        <span className='block text-xs font-medium tracking-widest uppercase '>Order Finished {order}º</span>
+        <h3 className='text-xl font-semibold tracking-wide'>{title}</h3>
       </div>
     </div>
   )

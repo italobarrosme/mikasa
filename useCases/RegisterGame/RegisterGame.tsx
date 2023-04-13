@@ -73,10 +73,10 @@ export const RegisterGame = () => {
 
   return (
     <section>
-      <button className="text-brand-light rounded-md shadow-md p-4 mx-auto bg-brand-secondary" onClick={(event) => setIsSideForm(!isSideForm)}>Go Insert Game</button>
+      <button className="text-brand-light rounded-md shadow-md p-4 mx-auto bg-brand-accent" onClick={(event) => setIsSideForm(!isSideForm)}>Go Insert Game</button>
       <SideForm title="Insert Game to Catalog" toggle={isSideForm ? 'isOpen' : 'isClosed'} emitEventClose={CloseForm}>
-        <form onSubmit={onSubmit} className="h-[774px] mb-4">
-          <div className="flex-col">
+        <form onSubmit={onSubmit} className="text-brand-accent relative">
+          <div className="flex flex-col gap-4">
             <div>
               <TextEditSelf defaultValue={gameData.orderFinished} type="number" name="orderFinished" label="What was the order of the finished game?" placeholder="Order Finished" onChange={(e) => handlerChangeInputOrderFinished(e)} />
             </div>
@@ -92,11 +92,12 @@ export const RegisterGame = () => {
             <div>
               <SlideStars defaultValue={gameData.rating} label="How many stars does this game deserve?" onChange={handlerStarsRating} />
             </div>
+            <div className="flex w-full">
+              <button className="w-full px-6 py-2 leading-5 text-brand-light transition-colors duration-200 transform bg-brand-secondary rounded-md">Save</button>
+            </div>
           </div>
 
-          <div className="flex">
-            <button className="w-full px-6 py-2 leading-5 text-brand-light transition-colors duration-200 transform bg-brand-secondary rounded-md">Save</button>
-          </div>
+
         </form>
       </SideForm>
     </section>

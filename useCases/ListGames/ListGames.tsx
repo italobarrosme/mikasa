@@ -9,7 +9,7 @@ export const ListGames = () => {
     <>
       <section>
         <div className="flex justify-center items-center mb-4">
-          <h1 className="title-font font-medium text-2xl bg-brand-dark text-brand-light mb-4 w-[140px]">Game List</h1>
+          <h1 className="title-font font-medium text-2xl bg-brand-accent text-brand-light mb-4 w-[140px]">Game List</h1>
         </div>
 
         <ListCards items={data?.games} linkRef="/games/" ></ListCards>

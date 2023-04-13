@@ -62,7 +62,7 @@ export const TextAreaEditSelf = ({
               [
                 isEditing
                   ? 'bg-white z-20 border-2'
-                  : 'bg-transparent placeholder-brand-secondary focus:outline-none cursor-default pl-0',
+                  : 'bg-transparent placeholder-inherit focus:outline-none cursor-default pl-0',
               ]
             )}
             rows={rows}

@@ -15,7 +15,7 @@ export const ListCards = ({ items, linkRef }: ListCardsProps) => {
 
 
   return (
-    <ul className={clsx(width < 1080 ? 'flex flex-col gap-6 items-center' : 'flex flex-wrap gap-4')}>
+    <ul className={clsx(width < 1080 ? 'flex flex-col gap-6 items-center' : 'flex flex-wrap gap-4 p-4')}>
       {items?.map((it: any) => (
         <li key={it.id}>
           {linkRef ? <Link href={linkRef + it.id}>

@@ -9,7 +9,7 @@ const Home: NextPage = () => {
         <title>Game Over | Home</title>
         <meta name="keywords" content="games" />
       </Head>
-      <div className="flex justify-center items-center h-full">
+      <div className="flex justify-center items-center h-[calc(100vh-16em)]">
         <RegisterGame></RegisterGame>
       </div>
     </>

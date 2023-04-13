@@ -32,11 +32,12 @@ module.exports = {
         },
         colors: {
           brand: {
-            dark: '#0D0D0D',
-            light: '#FFFFFF',
-            primary: '#FDBA12',
-            secondary: '#22252A',
-            soft: '#2D3035'
+            dark: '#0B1240',
+            light: '#f9f9f9',
+            accent: '#E5006A',
+            primary: '#9C13BF',
+            secondary: '#4F217F',
+            soft: '#FF12FB'
           },
           transparent: 'transparent',
         },

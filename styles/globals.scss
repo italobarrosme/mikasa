@@ -2,8 +2,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  overflow: hidden;
-  @apply bg-brand-light;
+  @apply bg-brand-secondary text-brand-light relative;
 }
 
 a {

@@ -61,7 +61,7 @@ export const TextEditSelf = ({
               [
                 isEditing
                   ? 'bg-white border-2'
-                  : 'bg-transparent placeholder-brand-secondary focus:outline-none cursor-default pl-0',
+                  : 'bg-transparent placeholder-inherit focus:outline-none cursor-default pl-0',
               ]
             )}
             name={name}
@@ -69,7 +69,7 @@ export const TextEditSelf = ({
             readOnly={!isEditing}
             onChange={onChange}
           />
-          <div arial-label="hint" className="text-brand-secondary text-xs absolute top-14 left-0 mr-2 italic;">
+          <div arial-label="hint" className="text-xs absolute top-14 left-0 mr-2 italic;">
             {errorHint?.length ? (
               <span className="text-red-600 text-sm">{errorHint}</span>
             ) : (

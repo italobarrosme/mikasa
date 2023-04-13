@@ -1,5 +1,5 @@
 .component {
-  @apply w-full h-screen absolute right-0 top-0 bg-brand-primary shadow-2xl md:w-96;
+  @apply w-full h-auto absolute right-0 top-0 bg-brand-light shadow-2xl md:w-96;
 }
 
 .is {
@@ -12,24 +12,23 @@
   }
 }
 
-
 .header {
-  @apply flex items-center justify-between bg-brand-dark relative;
+  @apply flex items-center justify-between bg-brand-accent relative h-16;
 
-  >h1 {
+  > h1 {
     @apply w-full text-brand-light text-xl p-4 flex;
   }
 
-  >button {
+  > button {
     @apply bg-transparent absolute top-4 right-5 text-3xl;
 
-    >svg {
+    > svg {
       @apply text-brand-light;
 
     }
   }
 }
 
-.navbar {
-  @apply flex-col gap-2 p-4;
+.body {
+  @apply flex-col gap-2 p-4 overflow-y-auto h-full pt-16;
 }

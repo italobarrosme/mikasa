@@ -30,7 +30,7 @@
   list-style: none;
 
   >li {
-    @apply flex justify-center items-center w-screen p-2 relative bg-brand-dark text-brand-light;
+    @apply flex justify-center items-center w-screen p-2 relative bg-brand-primary text-brand-light;
   }
 
   :hover {

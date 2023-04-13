@@ -45,15 +45,15 @@ const Details = ({ game }: any) => {
     <section>
       <div className="container mx-auto">
         <div className="mx-auto flex flex-wrap">
-          <img alt="ecommerce" className="w-[400px] h-[310px] rounded-md" src={game.image.url} />
-          <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+          <img alt="ecommerce" className="object-fit object-center w-96 rounded-md h-72 " src={game.image.url} />
+          <div className="lg:w-1/2 w-full lg:pl-10 lg:py-0 mt-6 lg:mt-0">
             <div className="flex">
-              <span className="title-font font-medium text-2xl bg-brand-dark text-brand-light mb-4">{game.orderFinished}º Finished</span>
+              <span className="title-font font-medium text-2xl bg-brand-accent text-brand-light mb-4">{game.orderFinished}º Finished</span>
             </div>
-            <h2 className="text-sm title-font text-gray-500 tracking-widest">Finished Date {dataFormatada}</h2>
-            <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">{game.title}</h1>
+            <h2 className="text-sm title-font  tracking-widest">Finished Date {dataFormatada}</h2>
+            <h1 className="text-brand-light text-3xl title-font font-bold mb-1">{game.title}</h1>
             <div className="flex mb-4">
-              <span className="text-brand-secondary mt-2 flex items-center gap-1">{stars.map((item) => (
+              <span className="text-brand-accent mt-2 flex items-center gap-1">{stars.map((item) => (
                 <Icon key={item} icon={'akar-icons:star'} />
               ))}</span>
             </div>

@@ -48,19 +48,19 @@ export const AttachmentsEditSelf = ({
   return (
     <>
       <div {...props} className="flex items-center gap-4 max-w-[375px] mb-4 relative h-24" ref={componentRef}>
-        {label && <span className="absolute bottom-20">{label}</span>}
-        <div className="relative">
+        {label && <span className="absolute bottom-20 font-bold">{label}</span>}
+        <div className="relative truncate">
           {isEditing && <div className={styles['content__label']}>
             <label className={clsx(styles['label'], [isEditing && !fileData ? '' : 'hidden'])} htmlFor={name}>
               {attachmentText}
             </label>
             <label className={clsx(styles['label'], [isEditing && fileData ? '' : 'hidden'])} htmlFor={name}>
-              {fileData?.name}
+              <span className="truncate">{fileData?.name}</span>
             </label>
           </div>}
           <span>
             {!isEditing &&
-              <p className='flex items-center w-auto max-w-[210px] h-10 outline-none text-sm font-medium rounded-sm'>
+              <p className='flex items-center w-auto max-w-[210px] h-10 outline-none text-sm font-medium rounded-sm truncate'>
                 {fileData ? fileData.name : placeholder}
               </p>}
           </span>

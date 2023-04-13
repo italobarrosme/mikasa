@@ -2,8 +2,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  overflow: hidden;
-  @apply bg-brand-primary;
+  @apply bg-brand-secondary text-brand-light relative;
 }
 
 a {
@@ -16,7 +15,7 @@ a {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 
 }
 
@@ -28,7 +27,6 @@ a {
 /* Handle */
 ::-webkit-scrollbar-thumb {
   @apply bg-brand-dark;
-  border-radius: 10px;
 }
 
 /* Handle on hover */

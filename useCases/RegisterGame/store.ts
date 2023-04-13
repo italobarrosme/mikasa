@@ -8,7 +8,7 @@ type State = {
 }
 
 const registerGameData = {
-  orderFinished: 0,
+  orderFinished: '',
   description: '',
   finishedDate: '',
   image: {

@@ -9,10 +9,11 @@ export type TextEditSelfProps = {
   errorHint?: string
   countCharacters?: number
   label?: string
+  defaultValue?: string | number
 } & InputHTMLAttributes<HTMLInputElement>
 
 export const TextEditSelf = ({
-  defaultValue,
+  defaultValue = '',
   hint,
   placeholder,
   errorHint = '',
@@ -46,7 +47,7 @@ export const TextEditSelf = ({
   return (
     <>
       <div {...props} className="flex items-center gap-4 max-w-[375px] mb-4 relative h-24" ref={componentRef}>
-        {label && <span className="absolute bottom-20">{label}</span>}
+        {label && <span className="absolute bottom-20 font-bold">{label}</span>}
         <div className="relative">
           <input
             type={type}
@@ -59,8 +60,8 @@ export const TextEditSelf = ({
               countCharacters > 20 ? 'min-w-[320px]' : '',
               [
                 isEditing
-                  ? 'bg-white'
-                  : 'bg-transparent placeholder-brand-secondary focus:outline-none cursor-default pl-0',
+                  ? 'bg-white border-2'
+                  : 'bg-transparent placeholder-inherit focus:outline-none cursor-default pl-0',
               ]
             )}
             name={name}
@@ -68,7 +69,7 @@ export const TextEditSelf = ({
             readOnly={!isEditing}
             onChange={onChange}
           />
-          <div arial-label="hint" className="text-brand-secondary text-xs absolute top-14 left-0 mr-2 italic;">
+          <div arial-label="hint" className="text-xs absolute top-14 left-0 mr-2 italic;">
             {errorHint?.length ? (
               <span className="text-red-600 text-sm">{errorHint}</span>
             ) : (

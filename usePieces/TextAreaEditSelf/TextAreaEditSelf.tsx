@@ -14,9 +14,8 @@ export type TextAreaEditSelfProps = {
   hint?: string
   errorHint?: string
   countCharacters?: number
+  defaultValue?: string | number
 } & TextareaHTMLAttributes<HTMLTextAreaElement>;
-
-
 
 export const TextAreaEditSelf = ({
   hint,
@@ -28,7 +27,7 @@ export const TextAreaEditSelf = ({
   cols = 30,
   onChange,
   emitSave,
-  defaultValue
+  defaultValue = ''
 }: TextAreaEditSelfProps) => {
 
   const componentRef = useRef(null)
@@ -53,7 +52,7 @@ export const TextAreaEditSelf = ({
   return (
     <>
       <div className="flex items-center gap-4 max-w-[375px] mb-4 relative h-52" ref={componentRef}>
-        {label && <span className="absolute top-0">{label}</span>}
+        {label && <span className="absolute top-0 font-bold">{label}</span>}
         <div className="relative">
           <textarea
             placeholder={placeholder}
@@ -62,8 +61,8 @@ export const TextAreaEditSelf = ({
               errorHint?.length ? 'border-error border-2' : '',
               [
                 isEditing
-                  ? 'bg-white z-20'
-                  : 'bg-transparent placeholder-brand-secondary focus:outline-none cursor-default pl-0',
+                  ? 'bg-white z-20 border-2'
+                  : 'bg-transparent placeholder-inherit focus:outline-none cursor-default pl-0',
               ]
             )}
             rows={rows}

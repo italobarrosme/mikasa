@@ -1,1 +1,0 @@
-export { RegisterGame } from "./RegisterGame";

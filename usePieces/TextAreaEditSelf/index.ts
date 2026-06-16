@@ -1,1 +1,0 @@
-export { TextAreaEditSelf, type TextAreaEditSelfProps } from './TextAreaEditSelf'
